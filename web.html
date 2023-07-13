@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #f5f5f5;
+      padding: 2em;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 2em;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+      color: #444;
+    }
+    button {
+      margin: 1em 0;
+      padding: 10px 20px;
+      font-size: 1em;
+      color: #fff;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .step {
+      max-width: 100%;
+      margin-bottom: 2em;
+      text-align: center;
+    }
+    .step img {
+      max-width: 100%;
+      height: auto;
+    }
+    @media (min-width: 768px) {
+      .step {
+        max-width: 768px;
+      }
+    }
+    #toc {
+      display: none;
+      margin-bottom: 2em;
+    }
+    #toc.show {
+      display: block;
+    }
+    
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;  /* 初期状態では非表示 */
+      background-color: #007BFF;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+    #back-to-top:hover {
+      background-color: #0056b3;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+        <h1>ページ公開手順</h1>
+    <p>このページでは、GitHubでのWebページの公開手順を説明します。</p>
+
+    <button onclick="toggleTOC()">目次</button>
+    <ol id="toc">
+      <li><a href="#step1">アカウント作成</a></li>
+      <li><a href="#step2">事前準備</a></li>
+        <li><a href="#step3">ファイルアップロード</a></li>
+        <li><a href="#step4">公開</a></li>
+        <li><a href="#step5">ページへアクセス</a></li>
+    </ol>
+    <div class="step" id="step1">
+        <h3>ステップ1: アカウント作成</h3>
+      <img src=".\assets\images\web1image\git1.png" alt="Step 1">
+      <p>
+          以下のURLにアクセスすると上のようなページに飛びます。<br>
+          https://github.com/join<br>
+          自身の任意の情報で登録を行ってください。
+          ＊ユーザーネームはアクセスするリンクにかかわるので注意
+        </p>
+    </div>
+    <div class="step" id="step2">
+        <h3>ステップ2: 保存場所作成</h3>
+      <img src=".\assets\images\web1image\git2.png" alt="Step 2">
+      <p>
+          右上プラスボタンのNew repositoryから専用フォルダを作成します。
+        </p>
+    </div>
+    <div class="step">
+      <img src=".\assets\images\web1image\git3.png" alt="Step 3">
+      <p>
+        Repository　nameの欄に任意の名前を設定します。<br>
+        アクセスするリンクにかかわってきますので注意
+        </p>
+    </div>
+    <div class="step" id="step3">
+        <h3>ステップ3: ファイルアップロード</h3>
+      <img src=".\assets\images\web1image\git4.png" alt="Step 4">
+      <p>フォルダアップロード<br>
+        自作のものがあればuploadingを選択
+        </p>
+    </div>
+    <div class="step">
+      <img src=".\assets\images\web1image\git5.png" alt="Step 5">
+      <p>自分のファイルをアップロードする<br>
+          drug&dropかブラウジングのどちらでも良い<br>
+          すべてのファイルのアップロードが終了したら<br>
+          Commit changesをクリック
+          </p>
+    </div>
+    <div class="step" id="step4">
+                   <h3>ステップ4: 公開</h3>
+      <img src=".\assets\images\web1image\git6.png" alt="Step 6">
+      <p>
+          上部のSettingsをクリック
+        </p>
+    </div>
+    <div class="step">
+      <img src=".\assets\images\web1image\git7.png" alt="Step 7">
+      <p>Pagesをクリック<br>
+        </p>
+    </div>
+    <div class="step" >   
+      <img src=".\assets\images\web1image\git8.png" alt="Step 8">
+      <p>
+        Branch欄のNoneをクリック<br>
+        Mainへ変更してSaveをクリック
+        </p>
+    </div>
+    <div class="step" id="step5">
+        <h3>ステップ5: ページへアクセス</h3>
+      <img src=".\assets\images\web1image\git10.png" alt="Step 9">
+      <p>作成したページへアクセス<br>
+          以下のリンクへアクセスすると公開したページを見ることができます。<br>
+          自分のユーザー名.github.io/リポジトリーネーム/index.html
+        </p>
+    </div>
+  </div>
+    <a id="back-to-top" href="#">上へ戻る</a>
+
+    <script>
+    function toggleTOC() {
+      var toc = document.getElementById('toc');
+      if (toc.style.display === "none") {
+        toc.style.display = "block";
+      } else {
+        toc.style.display = "none";
+      }
+    }
+    var backToTopButton = document.getElementById('back-to-top');
+    window.onscroll = function() {
+      // スクロール量が300pxを超えたらボタンを表示
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>
