@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青春ガチャ</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #333;
+            text-align: center; 
+            padding: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        .rarity-UR {
+            color: gold;
+        }
+        .rarity-SSR {
+            color: silver;
+        }
+        .rarity-SR {
+            color: #CD7F32; /* bronze */
+        }
+        .rarity-R {
+            color: #A9A9A9; /* dark gray */
+        }
+        .rarity-N {
+            color: #000000; /* black */
+        }
+        @media (max-width: 600px) {
+            button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+            #result {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>青春のイベントガチャ</h1>
+    <button id="draw">ガチャを引く</button>
+    <div id="result"></div>
+    
+    <script src="gacha.js"></script>
+</body>
+</html>
