@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja"> <!-- lang属性でページの言語を日本語に指定 -->
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #f5f5f5;
+      padding: 2em;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 2em;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+      color: #444;
+    }
+    button {
+      margin: 1em 0;
+      padding: 10px 20px;
+      font-size: 1em;
+      color: #fff;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .step {
+      max-width: 100%;
+      margin-bottom: 2em;
+      text-align: center;
+    }
+    .step img {
+      max-width: 100%;
+      height: auto;
+    }
+    @media (min-width: 768px) {
+      .step {
+        max-width: 768px;
+      }
+    }
+    #toc {
+      display: none;
+      margin-bottom: 2em;
+    }
+    #toc.show {
+      display: block;
+    }
+    
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;  /* 初期状態では非表示 */
+      background-color: #007BFF;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+    #back-to-top:hover {
+      background-color: #0056b3;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+        <h1>ハッカソン参加記録</h1>
+    <p>このページでは、私が参加したStar-techについてのレポートを記しています。</p>
+
+    <button onclick="toggleTOC()">目次</button>
+    <ol id="toc">
+      <li><a href="#step1">参加背景</a></li>
+      <li><a href="#step2">行動記録</a></li>
+        <li><a href="#step3">感想</a></li>
+        <li><a href="#step4">成果物</a></li>
+        <li><a href="#step5">参考情報</a></li>
+    </ol>
+    <div class="step" id="step1">
+        <h3>参加背景</h3>
+      <p style="text-align:left">
+          &emsp;私がこのStar-techハッカソンに参加するきっかけは、知人からの紹介でした。
+          このイベントが私にぴったり合っていると感じ、興味を持ったのは複数の要素があります。
+          まず、参加資格に「ハッカソン未経験者」と「学部3年生以下」といった条件があった点が、
+          私自身の状況とマッチしていました。
+          それに加え、ハッカソンという形式そのものに対して長らく興味を抱いていたため、
+          この機会を逃すわけにはいかないと思いました。
+          ただ、参加を決定した時点で締め切りまでにわずか2日しか残されていなかった
+          （後に締め切りが延期されることになりましたが）。
+          その状況で、急遽知り合いや友人に声をかけ、
+          結局はバイト先の後輩であり同じ大学の2年生である荒木君とその同期、
+          近藤君の3人で参加申し込みを行いました。<br><br>
+          
+          &emsp;悲しいことに、私たち3人ともProcessing（プログラミング言語）については
+          初めて聞いたというくらいの初心者でした。
+          それは確かに不安要素でありましたが、このハッカソンが初心者向けであるという点と、
+          何よりもハッカソン自体に対する共通の興味があるため、全員意気投合して参加することとなりました。
+        </p>
+    </div>
+    <div class="step" id="step2">
+        <h3>行動記録</h3>
+      <p style="text-align:left">
+          &emsp;主題として「スター」が発表された後、チーム内で議論を開始。
+          最初はゲーム関連のアイデアしか思いつかず、加えてProcessingで何が可能かも不明であった。
+          しかし、シンプルなシューティングゲームがテーマに適合すると考え、開発を進めた。
+          チームメンバーのスキルセットが初めての共同作業で不明瞭であったため、継続的にリサーチとその反映を行いながら進めた。
+          2D版の大枠は、音声調整に苦労したものの、約1.5日で完成。<br><br>
+
+          &emsp;差別化を図るため、3D版の開発に挑戦。x,y軸に加えてz軸を導入することで、難易度は大幅に増した。
+          3D表現に関する問題点を解決するため、メンターの意見を取り入れたり、
+          トライ&エラーで調整を行い、完成に至った。
+          最終的には、審査員賞として日本大学の谷聖一先生から評価をいただいた。
+        </p>
+    </div>
+    <div class="step" id="step3">
+        <h3>成果物</h3>
+        <table>
+            <tbody>
+                <tr>
+                    <td width="33%">
+                        <img src=".\assets\images\hackimage\title.png"/>
+                    </td>
+                    <td width="33%">
+                        <img src=".\assets\images\hackimage\2D.png"/>
+                    </td>
+                    <td width="33%">
+                        <img src=".\assets\images\hackimage\3D.png"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      <p style="text-align:left">
+          ２Dおよび３Dの回避型アクションゲーム<br>
+          プレイヤーは惑星を操作して、悪性物質をよけながら星を吸収して自分を大きくしていくゲーム。<br>
+          レベルが上がるにつれて星のエネルギー増大と温度による色の変化について体感することができる。<br>
+          <table>
+            <tbody>
+                <tr>
+                    <td width="50%">
+                        <img src=".\assets\images\hackimage\score.png"/>
+                    </td>
+                    <td width="50%">
+                        <img src=".\assets\images\hackimage\image4.gif"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+          プレイヤーは最終スコアを伸ばして遊ぶことも可能。<br>
+          スターに絡めた隠し要素も入れられている。<br>
+        </p>
+    </div>
+    <div class="step" id="step4">
+                   <h3>感想</h3>
+      <p style="text-align:left">
+          &emsp;初対面の人々とオンラインで打ち合わせを開始するという緊張のスタートから、4日間は一瞬で過ぎました。
+          始めは緊張もありましたが、タスクと時間制限が明確であったため、次第に集中して作業に没頭していきました。
+          ほかのチームが何を作っているのかは分からなかったですが、それがかえって私たちの集中力を高め、良い作品作りに繋がりました。<br><br>
+          
+          &emsp;特に有意義だったのは、3Dゲームへの挑戦でした。<br>
+          他チームが同様の試みを断念する中、私たちがその挑戦を続けたことで、<br>
+          プロジェクトに独自性を持たせることができました。<br>
+          この成功体験は、私たち全員にとって次回以降のハッカソンへの興味を一層高めました。<br><br>
+
+          &emsp;このハッカソンに参加できたこと、そして新しい挑戦を経験できたことに感謝しています。<br>
+          知識のない状態で参加した後輩たち、この機会を提供してくれた知人、<br>
+          そしてイベントを開催した皆様に深く感謝します。今後も、新たな機会に挑戦していきたいです。
+
+
+        </p>
+    </div>
+    <div class="step" id="step5">
+        <h3>参考情報</h3>
+      <img src=".\assets\images\hackimage\aword.png" alt="Step 9">
+      <p style="text-align:left">
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;チームシーボルト参加メンバー&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;受賞<br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;広橋龍弥&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;審査員賞<br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;荒木亮太&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;谷聖一先生(日本大学)<br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;近藤輝莉<br>
+        　&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;↓クリック！<br>
+	　　　<a href= "https://sites.google.com/view/start-tech2023/">Start-tech2023</a>&emsp;&emsp;&emsp;&emsp;
+          <a href= "https://twitter.com/start_tech_jp?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">X:@start_tech_jp</a>&emsp;&emsp;&emsp;&emsp;
+           <a href= "https://drive.google.com/drive/folders/12h3UjWySMHr-6h5SCnT4nBHAeRd6kHF4?usp=sharing">制作したゲームをよかったら遊んでみてください</a>
+        </p>
+    </div>
+  </div>
+    <a id="back-to-top" href="#">上へ戻る</a>
+
+    <script>
+    function toggleTOC() {
+      var toc = document.getElementById('toc');
+      if (toc.style.display === "none") {
+        toc.style.display = "block";
+      } else {
+        toc.style.display = "none";
+      }
+    }
+    var backToTopButton = document.getElementById('back-to-top');
+    window.onscroll = function() {
+      // スクロール量が300pxを超えたらボタンを表示
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
+  </script>
+    <section class="contact" id="contact"> <!-- お問い合わせセクション -->
+        <div class="c-inner-lv1"> <!-- セクションの内側のコンテナ -->
+          <div class="container"> <!-- Bootstrapのグリッドシステムのコンテナ -->
+            <p class="row text-center contact__row js-fadein"> <!-- お問い合わせについてのテキスト -->
+              ご相談などは<br
+                class="u-hidden-pc" <!-- PC画面では非表示になるbr !-->
+              下記のメールアドレスにてお願いします。
+            </p>
+            <div class="contact__block js-fadein"> <!-- お問い合わせ先リンクを含むブロック -->
+                <div class="contact__inner"><a href="mailto:bs121034@sun.ac.jp" class="contact__mail">My portfolio</a></div> 
+                <div class="contact__inner"><a href="https://www.instagram.com/ryuryu342/" class="contact__sns">Instgram</a></div> <!-- Instagramへのリンク -->
+                <div class="contact__inner"><a href="mailto:bs121034@sun.ac.jp" class="contact__mail">bs121034@sun.ac.jp</a></div> <!-- メールアドレスへのリンク -->
+            </div>
+          </div>
+        </div>
+      </section>
+      </div>
+      </main>
+      <footer class="footer"> <!-- フッター -->
+        <div class="footer__inner container"> <!-- フッター内部のコンテナ -->
+          <p class="footer__cr"> <!-- 著作権表示 -->
+            Copyright © 2023 Hirohashi Ryuya Portfolio All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+</body>
+</html>
