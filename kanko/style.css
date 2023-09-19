@@ -1,0 +1,73 @@
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    background-image: url('image/nagasaki_kankou.gif'); /* 動画ファイルのパスを指定 */
+    background-size: cover; /* 背景画像をコンテナに合わせて調整 */
+    background-attachment: fixed; /* 背景を固定 */
+    animation: moveBackground 30s linear infinite; /* アニメーションを設定 */
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* 背景の透明度を設定 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* 観光地のセクション */
+.section {
+    background-color: rgba(255, 255, 255, 0.8); /* 背景の透明度を設定 */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 観光地のタイトル */
+h2 {
+    color: #333;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+/* 観光地の特徴 */
+p span[id^="features"] {
+    font-style: italic;
+    color: #666;
+}
+
+/* 推定滞在時間 */
+p span[id^="stayTime"] {
+    font-weight: bold;
+}
+
+/* 移動時間 */
+p span[id^="travelTime"] {
+    font-weight: bold;
+}
+
+/* 背景画像（写真） */
+.section img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* アニメーション */
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
