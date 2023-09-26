@@ -5,7 +5,7 @@ body {
 }
 
 .background {
-    background-image: url('../image/cruse.jpg');/*写真が保存されている場所に変更*/
+    background-image: url('../image/cruise.jpg');/*写真が保存されている場所に変更*/
     background-size: cover;
     background-position: center;
     height: 100vh;
