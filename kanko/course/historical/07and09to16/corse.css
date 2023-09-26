@@ -1,0 +1,124 @@
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* 観光地のセクション */
+.section {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 観光地のタイトル */
+h2 {
+    color: #333;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+/* 観光地の特徴 */
+p span[id^="features"] {
+    font-style: italic;
+    color: #666;
+}
+
+/* 推定滞在時間 */
+p span[id^="stayTime"] {
+    font-weight: bold;
+}
+
+/* 移動時間 */
+p span[id^="travelTime"] {
+    font-weight: bold;
+	font-size: 18px;
+}
+
+/* 背景画像（写真） */
+.section img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Bootstrapのレスポンシブクラス */
+/* スマートフォン向けスタイル */
+@media (max-width: 767px) {
+    .container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    .section {
+        padding: 10px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+}
+#background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: 100% 100%; /* 画像をウェブページ全体に合わせて表示 */
+	transition: background-image 1s ease;
+}
+/* Google マップのコンテナのスタイル */
+iframe {
+  width: 100%;
+  aspect-ratio: 16/9; /*アスペクト比（縦横比）を指定*/
+}
+.header-dark {
+  background: #000000;
+  background-size:cover;
+}
+
+.footer {
+  padding: 2rem;
+  font-size: 15px;
+  color: #999;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer a:hover {
+  color: #000;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .md-flex {
+    display: flex;
+  }
+
+  .md-flex li + li {
+    margin-left: 16px;
+  }
+}

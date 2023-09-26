@@ -1,0 +1,129 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    color: #333333;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        margin: 10px;
+    }
+    .container {
+        padding: 10px;
+    }
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    background-color: #fafafa;
+}
+
+iframe {
+    width: 100%;
+    height: 800px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+#courseDetails div {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    background-color: #fafafa;
+}
+
+#courseDetails img {
+    max-width: 100%;
+    height: auto;
+}
+
+#pdfDownload {
+    display: block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#pdfDownload:hover {
+    background-color: #0056b3;
+}
+
+.header-dark {
+  background: #000000;
+  background-size:cover;
+}
+
+.footer {
+  padding: 2rem;
+  font-size: 15px;
+  color: #999;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer a:hover {
+  color: #000;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .md-flex {
+    display: flex;
+  }
+
+  .md-flex li + li {
+    margin-left: 16px;
+  }
+}
+
+
+
+
+
