@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-	background-image: url('image/cruise.jpg');
+	background-image: url('../image/cruise.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -91,14 +91,15 @@ h1 {
     margin: 0;
 }
 
-/* フッターのスタイル */
 footer {
     background-color: rgba(54, 156, 209, 0.7);
     color: #fff;
     text-align: center;
-    bottom: 0; /* 画面下部に配置 */
+    position: fixed; /* 画面下部に固定 */
+    bottom: 0;
     left: 0;
     right: 0;
+    z-index: 999; /* 必要に応じて調整 */
 }
 
 /* メディアクエリ：スマートフォン向けのスタイル */
@@ -148,5 +149,9 @@ footer {
 
     .course {
         flex-basis: 100%; /* コースの幅を100%に設定 */
+    }
+  
+   footer {
+    position: relative;
     }
 }
