@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>長崎市観光</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../corse.css" rel="stylesheet">
+</head>
+<body>
+<div id="background-image"></div>
+<div class="container">
+  <h1 class="mt-4">長崎市観光</h1>
+  <p>時間: <span id="totalTime">12時〜13時</span></p>
+  <p>移動開始位置名: <span id="startLocation">松ヶ枝国際ターミナル</span></p>
+  
+  <!-- 観光地のセクション --> 
+    <!-- Leafletのスタイルシートとスクリプトの追加 -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<!-- マップを表示するためのコンテナ -->
+<div id="mapid" style="height: 400px;"></div>
+
+<script>
+// マップの初期化
+var mymap = L.map('mapid').setView([32.73679957239006, 129.8682477829969], 12);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap contributors'
+}).addTo(mymap);
+
+// 観光地のピンを追加
+var locations = [
+    {lat:32.73679957239006, lng:129.8682477829969, name: "松ヶ枝国際ターミナル"},
+    {lat:32.7360433, lng:129.869209, name: "軍艦島デジタルミュージアム"},
+];
+
+locations.forEach(function(location) {
+    L.marker([location.lat, location.lng]).addTo(mymap)
+        .bindPopup(location.name);
+});
+</script>
+
+<div class="section">
+    <h2>1つ目の場所: 軍艦島デジタルミュージアム</h2>
+    <img src="../../../image/dejitarumyujiamu.jpg" alt="行き先1の写真" class="img-fluid rounded">
+    <p>特徴: <span id="features1">3D、VR、MRなど最新のデジタル技術であの頃の軍艦島にタイムスリップ！<br>長崎の軍艦島の歴史と文化を最新のデジタル技術を使って再現し、訪問者に感動的な体験を提供しています。<br>また、多様な展示やVR技術を通じて、かつての島の生活を独特の魅力で伝えています。</span></p>
+    <p>滞在時間:<span id="stayTime1">30分</span></p>
+  </div>
+  <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAq_rrEvtG_VdLIN69gx44f6Fj9M9Ptm1g&q=軍艦島デジタルミュージアム&center=32.7360433,129.869209&zoom=15&maptype=roadmap" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <div class="col-12 col-md-6">
+        <p>到着:松ヶ枝国際ターミナル</p>
+    </div>
+
+<!-- BootstrapのJavaScriptとjQueryを読み込み --> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script> 
+<script src ="../../corse.js"></script>
+</body>
+</html>
