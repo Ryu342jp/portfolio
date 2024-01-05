@@ -1,0 +1,127 @@
+HTMLの設定
+    <div class="navbar">
+        <div class="navbar-header">
+            <h1>長崎観光モデルコースマッチング</h1>
+            <button class="menu-toggle" aria-label="メニューを開く">&#9776;</button>
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="home.html">ホーム</a></li>
+            <li><a href="#">モデルコース</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+        </ul>
+    </div>
+フッター：最後の</body>の前に挿入
+<footer>
+    <p>&copy; 2023 長崎観光モデルコースマッチング</p>
+</footer>
+
+
+CSSの設定
+/* ナビゲーションバーのスタイル */
+.navbar {
+    background-color: rgba(101, 93, 144, 0.6);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-header {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* ヘッダーを伸ばしてナビゲーションアイテムとトグルを右側に移動 */
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px; /* 見出しの文字サイズを調整 */
+    
+}
+
+h3 {
+    color: #fff;
+    margin: 0;
+    font-size: 28px; /* 見出しの文字サイズを調整 */
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    align-self: flex-end; /* トグルを右側に配置 */
+}
+
+.navbar-menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center; /* メニューアイテムを中央に配置 */
+    justify-content: flex-end; /* メニューアイテムを右側に配置 */
+}
+
+.navbar-menu li {
+    margin-left: 20px; /* メニューアイテム間のマージンを調整 */
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* フッターのスタイル */
+footer {
+    background-color: rgba(54, 156, 209, 0.7);
+    color: #fff;
+    text-align: center;
+    position: static;
+    bottom: 0; /* 画面下部に配置 */
+    left: 0;
+    right: 0;
+}
+
+/* メディアクエリ：スマートフォン向けのスタイル */
+@media (max-width: 1000px) {
+    .navbar-menu {
+        display: none;
+        position: absolute;
+        top: 60px; /* ナビゲーションバーの下に配置 */
+        left: 0;
+        right: 0;
+        background-color: rgba(101, 93, 144, 0.6);
+        flex-direction: column;
+        z-index: 1; /* メニューを他の要素の上に表示 */
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-menu li {
+        margin-left: 0;
+        margin-bottom: 10px; /* メニューアイテム間のマージンを調整 */
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 28px;
+    }
+}
+
+Javascriptの設定
+document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navbarMenu = document.querySelector(".navbar-menu");
+
+    menuToggle.addEventListener("click", function() {
+        navbarMenu.classList.toggle("active");
+    });
+});
