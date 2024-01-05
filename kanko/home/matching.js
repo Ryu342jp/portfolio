@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if(endTime > 19) {
       errorMessageContainer.innerHTML = "※これより短い時間を選択してください";
     }
+    else if(duration == 1 && selectedGenre =='none'){
+      errorMessageContainer.innerHTML = "※2時間以上を選択して下さい";
+    }
     else{
       link = "../course/" + selectedGenre + "/" + duration + "and" + arrivalTime + "to" + endTime + "/course1.html";
       /*link = "../course/" + selectedGenre + "/" + startpoint + "/" + duration + "and" + arrivalTime + "to" + endTime + "/course1.html";*/
