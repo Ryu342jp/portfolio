@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>長崎市観光</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../corse.css" rel="stylesheet">
+</head>
+<body>
+<div id="background-image"></div>
+<div class="container">
+  <h1 class="mt-4">長崎市観光</h1>
+  <p>時間: <span id="totalTime">14時〜18時</span></p>
+  <p>移動開始位置名: <span id="startLocation">松ヶ枝国際ターミナル</span></p>
+  
+  <!-- 観光地のセクション --> 
+    <!-- Leafletのスタイルシートとスクリプトの追加 -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<!-- マップを表示するためのコンテナ -->
+<div id="mapid" style="height: 400px;"></div>
+
+<script>
+// マップの初期化
+var mymap = L.map('mapid').setView([32.73679957239006, 129.8682477829969], 12);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap contributors'
+}).addTo(mymap);
+
+// 観光地のピンを追加
+var locations = [
+    {lat:32.73679957239006, lng:129.8682477829969, name: "松ヶ枝国際ターミナル"},
+    {lat:32.741193, lng:129.869151, name: "長崎水辺の森公園"},,
+    {lat:32.747151, lng:129.880105, name: "眼鏡橋"},,
+    {lat:32.735652, lng:129.872402, name: "長崎孔子廟　中国歴代博物館"},,
+    {lat:32.73418, lng:129.870129, name: "大浦天主堂"},,
+    {lat:32.734326, lng:129.869183, name: "グラバー園"},
+];
+
+locations.forEach(function(location) {
+    L.marker([location.lat, location.lng]).addTo(mymap)
+        .bindPopup(location.name);
+});
+</script>
+
+<div class="section">
+    <h2>1つ目の場所: 長崎水辺の森公園</h2>
+    <img src="../../../image/mizubenomorikouen.jpg" alt="行き先1の写真" class="img-fluid rounded">
+    <p>特徴: <span id="features1">心地よい潮風満ちる憩いのベイエリア<br>憩いの場として多くの人が利用しており、帆船まつりみなとまつりなど年間を通して様々なイベントが開催されています。</span></p>
+    <p>滞在時間:<span id="stayTime1">30分</span></p>
+  </div>
+  <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAq_rrEvtG_VdLIN69gx44f6Fj9M9Ptm1g&q=長崎水辺の森公園&center=32.741193,129.869151&zoom=15&maptype=roadmap" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div class="section">
+    <h2>2つ目の場所: 眼鏡橋</h2>
+    <img src="../../../image/meganebasi.jpg" alt="行き先2の写真" class="img-fluid rounded">
+    <p>特徴: <span id="features2">日本三大名橋に数えられる現存最古のアーチ型石橋の一つ。国指定重要文化財<br>長崎市の中島川に架かる石造二連アーチ橋で、日本三大名橋のひとつです。橋の影が川面に映ると、眼鏡のように見えることからこの名前がついてます。1634年に興福寺の黙子如定禅師が架設したとされており、日本初の石造りアーチ橋だと言われています。</span></p>
+    <p>滞在時間:<span id="stayTime2">10分</span></p>
+  </div>
+  <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAq_rrEvtG_VdLIN69gx44f6Fj9M9Ptm1g&q=眼鏡橋&center=32.747151,129.880105&zoom=15&maptype=roadmap" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div class="section">
+    <h2>3つ目の場所: 長崎孔子廟　中国歴代博物館</h2>
+    <img src="../../../image/kousibyou.jpg" alt="行き先3の写真" class="img-fluid rounded">
+    <p>特徴: <span id="features3">壮麗な伝統美を随所に凝らした日本で唯一の本格的中国様式の霊廟<br>江戸時代から続く歴史と唯一無二の中国様式が息づく長崎孔子廟で、中国の春秋時代の偉大な思想家の遺産に触れ、中国歴代博物館に展示されている貴重な宮廷文物や古代美術を堪能できます。</span></p>
+    <p>滞在時間:<span id="stayTime3">60分</span></p>
+  </div>
+  <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAq_rrEvtG_VdLIN69gx44f6Fj9M9Ptm1g&q=長崎孔子廟　中国歴代博物館&center=32.735652,129.872402&zoom=15&maptype=roadmap" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div class="section">
+    <h2>4つ目の場所: 大浦天主堂</h2>
+    <img src="../../../image/oouratensyudou.jpg" alt="行き先4の写真" class="img-fluid rounded">
+    <p>特徴: <span id="features4">世界の宗教史上に残る劇的な「信徒発見」の舞台<br>日本国内で最も古いゴシック様式の教会として、長崎の美しい洋風建築の象徴です。<br>キリシタン博物館としての役割も担い、その歴史の深さと美しさに触れることができます。</span></p>
+    <p>滞在時間:<span id="stayTime4">10分</span></p>
+  </div>
+  <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAq_rrEvtG_VdLIN69gx44f6Fj9M9Ptm1g&q=大浦天主堂&center=32.73418,129.870129&zoom=15&maptype=roadmap" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div class="section">
+    <h2>5つ目の場所: グラバー園</h2>
+    <img src="../../../image/guraba.jpg" alt="行き先5の写真" class="img-fluid rounded">
+    <p>特徴: <span id="features5">偉人たちも魅せられた長崎港の絶景を体感！<br>長崎港を一望できる南山手の丘にある、明治期の洋館群を展示する観光スポットです。世界遺産の構成資産である旧グラバー住宅をはじめ、国指定重要文化財の旧リンガー住宅や旧オルト住宅など、異国情緒あふれる建築物が見どころです。園内には花や緑が豊富で、石畳や石段にも歴史や文化の香りが漂います。</span></p>
+    <p>滞在時間:<span id="stayTime5">60分</span></p>
+  </div>
+  <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAq_rrEvtG_VdLIN69gx44f6Fj9M9Ptm1g&q=グラバー園&center=32.734326,129.869183&zoom=15&maptype=roadmap" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <div class="col-12 col-md-6">
+        <p>到着:松ヶ枝国際ターミナル</p>
+    </div>
+
+<!-- BootstrapのJavaScriptとjQueryを読み込み --> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script> 
+<script src ="../../corse.js"></script>
+</body>
+</html>
